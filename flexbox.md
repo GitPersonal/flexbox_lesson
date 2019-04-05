@@ -1,23 +1,24 @@
 # Flexbox
 
-## Level 1 — Basic
+# CSS Flexbox
 
----
+## Flexbox Elements
 
----
-
-1. Creating a flex container
-
-to create a flex container, you just need to add the
-`display:flex;` property to an element.
-By default, all direct children are considered flex items and are laid out horizontally in a single row from left to right. If the total width of the flex items is larger than the container, the items will be scaled down so that they will fit into the container.
+To start using the Flexbox model, you need to first define a flex container.
 
 ```html
 <div class="flex-container">
-  <div class="flex-item"></div>
-  <div class="flex-item"></div>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
 </div>
 ```
+
+---
+
+## Parent Element (Container)
+
+The flex container becomes flexible by setting the display property to flex:
 
 ```css
 .flex-container {
@@ -25,9 +26,24 @@ By default, all direct children are considered flex items and are laid out horiz
 }
 ```
 
+The flex container properties are:
+
+- flex-direction
+- flex-wrap
+- flex-flow
+- justify-content
+- align-items
+- align-content
+
 ---
 
-2. Put flex items in a single column
+## The flex-direction Property
+
+The `flex-direction` property defines in which direction the container wants to stack the flex items.
+
+![Alt Text](images/flex-direction.png)
+
+The **`column`** value stacks the flex items vertically (from top to bottom):
 
 ```css
 .flex-container {
@@ -36,11 +52,7 @@ By default, all direct children are considered flex items and are laid out horiz
 }
 ```
 
-Flex items can be laid out vertically by setting flex-direction: column.
-
-It is also possible to lay them out in reverse order by setting
-
-`flex-direction: column-reverse` or `flex-direction: row-reverse`.
+The `column-reverse` value stacks the flex items vertically (but from bottom to top):
 
 ```css
 .flex-container {
@@ -49,75 +61,35 @@ It is also possible to lay them out in reverse order by setting
 }
 ```
 
-## Level 2 — Beginner
-
----
-
----
-
-1. Align flex items to the right
+The row value stacks the flex items horizontally (from left to right):
 
 ```css
 .flex-container {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row;
 }
 ```
 
-Recall that there is flex direction for every Flexbox model. `justify-content` is used to specify where the flex items should be placed along the flex direction. In the example above, `justify-content: flex-end` means items are justified to the end of the flex container in the horizontal direction. That’s why they are placed to the right.
-
----
-
-2. Center-align flex items
+The row-reverse value stacks the flex items horizontally (but from right to left):
 
 ```css
 .flex-container {
   display: flex;
-  justify-content: center;
+  flex-direction: row-reverse;
 }
 ```
 
 ---
 
-3. Spread out flex items
+## The flex-wrap Property
 
-You can specify how much space should appear between items in a container by using one of three possible spacing values for the `justify-content` property:
+The `flex-wrap` property specifies whether the flex items should wrap or not.
 
-- `space-evenly:` the space between the starting edge of the container and the first item is equal to the spacing between each item and the item adjacent to it.
+The examples below have 12 flex items, to better demonstrate the `flex-wrap` property.
 
-- `space-between:` the space between any two adjacent items is the same, but not necessarily equal to the space between the first/last item and its closest edge; the space between the start edge and the first item is equal to the space between the end edge and the last item.
+![Alt Text](images/flex-direction.png)
 
-- `space-around:` the space on each side of an item is the same for each item in the container. Note that the this means the space between two adjacent items will be twice as large as the space between the first/last item and its closest edge.
-
----
-
-4. Align flex items in a second direction
-
-Usually, we would like to lay out items along the flex direction while also aligning the items in the direction perpendicular to it. By setting `justify-content: center` and `align-items: center`, flex items can be placed at the center of flex container both `horizontally` and `vertically`.
-
----
-
-5. Align a particular flex item
-
-```css
-.flex-container {
-  display: flex;
-  align-items: center;
-}
-.flex-bottom {
-  align-self: flex-end;
-}
-```
-
-It is possible to align a particular flex item differently than the others in the container by using the `align-self` CSS property on that item.
-
-## Level 3 — Intermediate
-
----
-
----
-
-1. Allow flex items to wrap into other rows/columns
+The wrap value specifies that the flex items will wrap if necessary:
 
 ```css
 .flex-container {
@@ -126,11 +98,16 @@ It is possible to align a particular flex item differently than the others in th
 }
 ```
 
-By default, flex items are not allowed to wrap and they are resized to fit into a single row or column if flex container is not large enough for all of them. By adding `flex-wrap: wrap`, flex items that would overflow the container will be wrapped into another row.
+The nowrap value specifies that the flex items will not wrap (this is default):
 
----
+```css
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+```
 
-2.  Reverse wrapping
+The wrap-reverse value specifies that the flexible items will wrap if necessary, in reverse order:
 
 ```css
 .flex-container {
@@ -139,38 +116,232 @@ By default, flex items are not allowed to wrap and they are resized to fit into 
 }
 ```
 
-Flex items are still laid out in multiple rows `flex-wrap: wrap-reverse` but they start from the end of flex container.
-
 ---
 
-3.Justify position of lines of elements
+## The flex-flow Property
+
+The `flex-flow` property is a shorthand property for setting both the `flex-direction` and `flex-wrap` properties.
 
 ```css
 .flex-container {
   display: flex;
+  flex-flow: row wrap;
+}
+```
+
+---
+
+## The justify-content Property
+
+The `justify-content` property is used to align the flex items:
+
+![justify-content](images/justify-content.png)
+
+The center value aligns the flex items at the center of the container:
+
+```css
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+```
+
+The flex-start value aligns the flex items at the beginning of the container (this is default):
+
+```css
+.flex-container {
+  display: flex;
+  justify-content: flex-start;
+}
+```
+
+The flex-end value aligns the flex items at the end of the container:
+
+```css
+.flex-container {
+  display: flex;
+  justify-content: flex-end;
+}
+```
+
+The space-around value displays the flex items with space before, between, and after the lines:
+
+```css
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+}
+```
+
+The _space-between_ value displays the flex items with space between the lines:
+
+```css
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+```
+
+---
+
+## The align-items Property
+
+The `align-items` property is used to align the flex items vertically.
+
+![justify-content](images/align-items.png)
+
+In these examples we use a 200 pixels high container, to better demonstrate the `align-items` property.
+
+The _center_ value aligns the flex items in the middle of the container:
+
+```css
+.flex-container {
+  display: flex;
+  height: 200px;
+  align-items: center;
+}
+```
+
+The _flex-start_ value aligns the flex items at the top of the container:
+
+```css
+.flex-container {
+  display: flex;
+  height: 200px;
+  align-items: flex-start;
+}
+```
+
+The _flex-end_ value aligns the flex items at the bottom of the container:
+
+```css
+.flex-container {
+  display: flex;
+  height: 200px;
+  align-items: flex-end;
+}
+```
+
+The stretch value stretches the flex items to fill the container (this is default):
+
+```css
+.flex-container {
+  display: flex;
+  height: 200px;
+  align-items: stretch;
+}
+```
+
+The _baseline_ value aligns the flex items such as their baselines aligns:
+
+```css
+.flex-container {
+  display: flex;
+  height: 200px;
+  align-items: baseline;
+}
+```
+
+**Note:** the example uses different font-size to demonstrate that the items gets aligned by the text baseline:
+![justify-content](images/baseline.png)
+
+---
+
+---
+
+---
+
+## The align-content Property
+
+The `align-content` property is used to align the flex lines.
+
+![justify-content](images/align-content.png)
+
+In these examples we use a 600 pixels high container, with the flex-wrap property set to wrap, to better demonstrate the `align-content` property.
+
+The _space-between_ value displays the flex lines with equal space between them:
+
+```css
+.flex-container {
+  display: flex;
+  height: 600px;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+```
+
+The *space-aroun*d value displays the flex lines with space before, between, and after them:
+
+```css
+.flex-container {
+  display: flex;
+  height: 600px;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+```
+
+The _stretch_ value stretches the flex lines to take up the remaining space (this is default):
+
+```css
+.flex-container {
+  display: flex;
+  height: 600px;
+  flex-wrap: wrap;
+  align-content: stretch;
+}
+```
+
+The center value displays display the flex lines in the middle of the container:
+
+```css
+.flex-container {
+  display: flex;
+  height: 600px;
+  flex-wrap: wrap;
+  align-content: center;
+}
+```
+
+The `flex-start` value displays the flex lines at the start of the container:
+
+```css
+.flex-container {
+  display: flex;
+  height: 600px;
   flex-wrap: wrap;
   align-content: flex-start;
 }
 ```
 
-By default, rows of flex items that wrapped are stretched to take up all remaining space with equal spacing between adjacent rows. You can set align-content on the flex container to determine the positioning of rows when wrapping occurs. Possible values are `flex-start`, `flex-end`, `center`, `space-between`, `space-around` and `stretch(default)`.
-
-## Level 4 — Advanced
-
----
-
----
-
-1. Expand elements
+The _flex-end_ value displays the flex lines at the end of the container:
 
 ```css
 .flex-container {
   display: flex;
+  height: 600px;
+  flex-wrap: wrap;
+  align-content: flex-end;
 }
-.flex-item.nth-of-type(1) {
-  flex-grow: 1;
-}
-.flex-item.nth-of-type(2) {
-  flex-grow: 2;
+```
+
+---
+
+---
+
+## Perfect Centering
+
+In the following example we will solve a very common style problem: perfect centering.
+
+![justify-content](images/perfect-centering.png)
+
+**SOLUTION:** Set both the `justify-content` and align-items properties to _center_, and the flex item will be perfectly centered:
+
+```css
+.flex-container {
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
 }
 ```

@@ -1,0 +1,11 @@
+.flex-item{
+    background: gold;
+    width: 100px;
+    margin: 10px;
+}
+.flex-container{
+    background: rgb(98, 7, 245);
+    display: flex;
+}
+
+
