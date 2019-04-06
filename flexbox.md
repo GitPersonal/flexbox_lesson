@@ -96,7 +96,7 @@ The `flex-wrap` property specifies whether the flex items should wrap or not.
 
 The examples below have 12 flex items, to better demonstrate the `flex-wrap` property.
 
-![Alt Text](images/flex-direction.png)
+![Alt Text](images/flex-wrap.png)
 
 The wrap value specifies that the flex items will wrap if necessary:
 
