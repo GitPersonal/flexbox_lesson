@@ -257,7 +257,7 @@ The _flex-end_ value aligns the flex items at the bottom of the container:
 
 ---
 
-![justify-content](images/align-items-flex-stretch.png)
+![justify-content](images/align-items-stretch.png)
 The stretch value stretches the flex items to fill the container (this is default):
 
 ```css
