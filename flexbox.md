@@ -106,7 +106,8 @@ The wrap value specifies that the flex items will wrap if necessary:
   flex-wrap: wrap;
 }
 ```
-
+---
+![Alt Text](images/nowrap.png)
 The nowrap value specifies that the flex items will not wrap (this is default):
 
 ```css
@@ -115,7 +116,8 @@ The nowrap value specifies that the flex items will not wrap (this is default):
   flex-wrap: nowrap;
 }
 ```
-
+---
+![Alt Text](images/wrap-reverse.png)
 The wrap-reverse value specifies that the flexible items will wrap if necessary, in reverse order:
 
 ```css
@@ -157,7 +159,7 @@ The center value aligns the flex items at the center of the container:
 
 ---
 
-![justify-content](images/justify-content-start.png)
+![justify-content](images/justify-content-flex-start.png)
 The flex-start value aligns the flex items at the beginning of the container (this is default):
 
 ```css
@@ -166,7 +168,8 @@ The flex-start value aligns the flex items at the beginning of the container (th
   justify-content: flex-start;
 }
 ```
-
+---
+![justify-content](images/justify-content-flex-end.png)
 The flex-end value aligns the flex items at the end of the container:
 
 ```css
@@ -175,7 +178,8 @@ The flex-end value aligns the flex items at the end of the container:
   justify-content: flex-end;
 }
 ```
-
+---
+![justify-content](images/justify-content-space-around.png)
 The space-around value displays the flex items with space before, between, and after the lines:
 
 ```css
@@ -184,7 +188,8 @@ The space-around value displays the flex items with space before, between, and a
   justify-content: space-around;
 }
 ```
-
+---
+![justify-content](images/justify-content-space-between.png)
 The _space-between_ value displays the flex items with space between the lines:
 
 ```css
