@@ -64,6 +64,9 @@ The `column-reverse` value stacks the flex items vertically (but from bottom to 
 }
 ```
 
+---
+
+![Alt Text](images/row.png)
 The row value stacks the flex items horizontally (from left to right):
 
 ```css
@@ -73,6 +76,9 @@ The row value stacks the flex items horizontally (from left to right):
 }
 ```
 
+---
+
+![Alt Text](images/row-reverse.png)
 The row-reverse value stacks the flex items horizontally (but from right to left):
 
 ```css
