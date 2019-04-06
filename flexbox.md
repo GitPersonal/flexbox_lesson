@@ -268,6 +268,10 @@ The stretch value stretches the flex items to fill the container (this is defaul
 }
 ```
 
+---
+
+![justify-content](images/align-items-baseline.png)
+
 The _baseline_ value aligns the flex items such as their baselines aligns:
 
 ```css
@@ -279,7 +283,6 @@ The _baseline_ value aligns the flex items such as their baselines aligns:
 ```
 
 **Note:** the example uses different font-size to demonstrate that the items gets aligned by the text baseline:
-![justify-content](images/baseline.png)
 
 ---
 
