@@ -144,7 +144,7 @@ The `flex-flow` property is a shorthand property for setting both the `flex-dire
 
 The `justify-content` property is used to align the flex items:
 
-![justify-content](images/justify-content.png)
+![justify-content](images/justify-content-center.png)
 
 The center value aligns the flex items at the center of the container:
 
@@ -155,6 +155,9 @@ The center value aligns the flex items at the center of the container:
 }
 ```
 
+---
+
+![justify-content](images/justify-content-start.png)
 The flex-start value aligns the flex items at the beginning of the container (this is default):
 
 ```css
