@@ -3,7 +3,7 @@
     background: gold;
     color:rgb(98, 7, 245);
     width: 100px;
-    height: 100px;
+    /* height: 100px; */
     margin: 1rem;
     padding: 1rem;
     text-align: center; 
@@ -11,14 +11,28 @@
     font-weight: 500;
     font-family: sans-serif;
 }
-
+.one{
+    font-size: 1rem;
+}
+.two{
+    font-size: 2rem;
+}
+.three{
+    font-size: 3rem;
+}
+.four{
+    font-size: 4rem;
+}
+.five{
+    font-size: 5rem;
+}
 
 
 .flex-container{
     background: rgb(98, 7, 245);
-        height: 200px;
+    height: 200px;
     display: flex;
-    align-items: center;
+    align-items: baseline;
 }
 
 

@@ -229,6 +229,9 @@ The _center_ value aligns the flex items in the middle of the container:
 }
 ```
 
+---
+
+![justify-content](images/align-items-flex-start.png)
 The _flex-start_ value aligns the flex items at the top of the container:
 
 ```css
@@ -239,6 +242,9 @@ The _flex-start_ value aligns the flex items at the top of the container:
 }
 ```
 
+---
+
+![justify-content](images/align-items-flex-end.png)
 The _flex-end_ value aligns the flex items at the bottom of the container:
 
 ```css
@@ -249,6 +255,9 @@ The _flex-end_ value aligns the flex items at the bottom of the container:
 }
 ```
 
+---
+
+![justify-content](images/align-items-flex-stretch.png)
 The stretch value stretches the flex items to fill the container (this is default):
 
 ```css
@@ -271,10 +280,6 @@ The _baseline_ value aligns the flex items such as their baselines aligns:
 
 **Note:** the example uses different font-size to demonstrate that the items gets aligned by the text baseline:
 ![justify-content](images/baseline.png)
-
----
-
----
 
 ---
 
